@@ -4,6 +4,8 @@ import { Square } from "./components/Square.jsx"
 import { TURNS } from "./constants.js"
 import { checkWinner, checkEndGame } from "./logic/board.js"
 import { WinnerModal } from "./components/WinnerModal.jsx"
+import video from '/public/bg-tictactoe.mp4'
+import Footer from "./components/Footer.jsx"
 
 
 function App() {
@@ -57,35 +59,45 @@ function App() {
   }
 
   return (
-    <main className="board">
-      <h1>Tic Tac Toe</h1>
-      <button onClick={resetGame}>Reset del juego</button>
+    <section className="min-h-screen">
+      <video autoPlay muted loop className="video-bg">
+          <source src={video} type="video/mp4" />
+      </video>
 
-      <section className="game">
-        {
-          board.map((square, index) => {
-            return (
-              <Square key={index} index={index} updateBoard={updateBoard}>
-                {square}
-              </Square>
-            )
-          })
-        }
-      </section>
+      <main className="board">
+        <h1>Tic Tac Toe</h1>
+        <button onClick={resetGame}>Reset del juego</button>
 
-      <section className="turn">
-        <Square isSelected={turn === TURNS.X}>
-          {TURNS.X}
-          </Square>
+        <section className="game">
+          {
+            board.map((square, index) => {
+              return (
+                <Square key={index} index={index} updateBoard={updateBoard}>
+                  {square}
+                </Square>
+              )
+            })
+          }
+        </section>
 
-        <Square isSelected={turn === TURNS.O}>
-          {TURNS.O}
-          </Square>
-      </section>
+        <section className="turn">
+          <Square isSelected={turn === TURNS.X}>
+            {TURNS.X}
+            </Square>
 
-      <WinnerModal resetGame={resetGame} winner={winner} />
+          <Square isSelected={turn === TURNS.O}>
+            {TURNS.O}
+            </Square>
+        </section>
 
-    </main>
+        <WinnerModal resetGame={resetGame} winner={winner} />
+
+      </main>
+
+      <Footer />
+
+    </section>
+    
   )
 }
 
