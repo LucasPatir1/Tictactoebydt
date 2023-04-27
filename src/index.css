@@ -151,8 +151,7 @@ body {
 
 .footer-container {
   display: flex;
-  flex-direction: column;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
   color: white;
   margin: 8px;
@@ -169,11 +168,4 @@ body {
 .logos a{
   color: white;
   font-size: 2rem;
-}
-
-@media (min-width: 768px) {
-  .footer-container {
-    flex-direction: row;
-    justify-content: space-between;
-  }
 }
