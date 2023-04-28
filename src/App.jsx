@@ -59,7 +59,7 @@ function App() {
   }
 
   return (
-    <section className="min-h-screen">
+    <section className="App__container">
       <video autoPlay muted loop className="video-bg">
           <source src={video} type="video/mp4" />
       </video>

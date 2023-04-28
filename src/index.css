@@ -33,17 +33,18 @@ body {
   box-sizing: border-box;
 }
 
+
 .board {
   width: fit-content;
-  margin: 40px auto;
+  margin: 30px auto 0;
   text-align: center;
 }
 
 .board h1 {
   font-family: "Tilt Prism", cursive;
   color: #eee;
-  font-size: 4rem;
-  margin-bottom: 32px;
+  font-size: 3.5rem;
+  margin-bottom: 12px;
 }
 
 .board button {
@@ -126,8 +127,8 @@ body {
 }
 
 .square {
-  width: 100px;
-  height: 100px;
+  width: 80px;
+  height: 80px;
   border: 2px solid #eee;
   border-radius: 5px;
   display: grid;
@@ -161,11 +162,29 @@ body {
 
 .logos {
   display: flex;
-  row-gap: 1rem;
+  gap: 7px;
   color: white;
 }
 
 .logos a{
   color: white;
   font-size: 2rem;
+}
+
+@media (min-width: 768px) {
+  .board {
+    margin: 40px auto;
+  }
+  
+  .board h1 {
+    font-family: "Tilt Prism", cursive;
+    color: #eee;
+    font-size: 4rem;
+    margin-bottom: 32px;
+  }
+
+  .square {
+    width: 100px;
+    height: 100px;
+  }
 }
